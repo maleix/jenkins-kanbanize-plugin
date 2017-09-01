@@ -235,80 +235,67 @@ public class CreateNewTask extends KanbanizeBuildStep {
                 }
             }
 
-            if (valid) {
-                return FormValidation.ok();
-            }
-            else {
+            if (!valid) {
                 return FormValidation.error("Must be one of the following: "+options.toString());
             }
+            
+            return FormValidation.ok();
         }
 
         public FormValidation doCheckColor(@QueryParameter String color) 
             throws IOException, ServletException {
             
-            if (color.isEmpty()) {
-                return FormValidation.ok();
-            }
-            else {
+            if (!color.isEmpty()) {
                 if (color.charAt(0) != '#') {
                     return FormValidation.error("Color code must start with \'#\''");
                 }
                 else if (color.length() != 7) {
                     return FormValidation.error("Hex code must have 6 digits");
-                }
-                else {
-                    return FormValidation.ok();
-                }
+                }   
             }
+            return FormValidation.ok();
         }
 
         public FormValidation doCheckSize(@QueryParameter String size) 
             throws IOException, ServletException {
-            if (size.isEmpty()) {
-                return FormValidation.ok();
-            }
-            else {
+
+            if (!size.isEmpty()) {
                 if (!size.matches("[0-9]+")) {
                     return FormValidation.error("Size must contain only numbers");
                 }
-                return FormValidation.ok();
             }
+            return FormValidation.ok();
         }
 
         public FormValidation doCheckDeadline(@QueryParameter String deadline) 
             throws IOException, ServletException {
-
-            if (deadline.isEmpty()) {
-                return FormValidation.ok();
-            }
-            else {
+            
+            if (!deadline.isEmpty()) {
                 final String DATE_FORMAT = "yyyy-MM-dd";
                 try {
                     DateFormat df = new SimpleDateFormat(DATE_FORMAT);
                     df.setLenient(false);
                     df.parse(deadline);
-                    return FormValidation.ok();
                 } catch (ParseException e) {
-                    return FormValidation.error("Date must be "+DATE_FORMAT);
-                }    
-            }      
+                    return FormValidation.error("Date must be in format "+DATE_FORMAT);
+                }
+            }
+            return FormValidation.ok();
         }
 
         public FormValidation doCheckExtlink(@QueryParameter String extlink) 
             throws IOException, ServletException {
 
-            if (extlink.isEmpty()) {
-                return FormValidation.ok();
-            }
-            else {
+            if (!extlink.isEmpty()) {
                 try {
                     URL url = new URL(extlink);
                     return FormValidation.ok();
                 }
                 catch (MalformedURLException e) {
                     return FormValidation.error("Must have a valid URL format: eg: \"https://www.foo.bar\"");
-                }
+                }              
             }
+            return FormValidation.ok();
         }
     }
 }

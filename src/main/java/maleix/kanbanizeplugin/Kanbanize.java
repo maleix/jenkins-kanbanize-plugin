@@ -31,6 +31,18 @@ public class Kanbanize {
 
 	public void delete_task(HashMap details) throws Exception {
         request.sendPost("delete_task", gson.toJson(details));
+    }
+
+    public void move_task(HashMap details) throws Exception {
+        request.sendPost("move_task", gson.toJson(details));
+	}
+
+	public HashMap log_time(HashMap details) throws Exception {
+        return request.sendPost("log_time", gson.toJson(details));
+	}
+
+	public HashMap get_task_details(HashMap details) throws Exception {
+		return request.sendPost("get_task_details", gson.toJson(details));
 	}
 }
 

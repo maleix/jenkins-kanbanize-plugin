@@ -1,0 +1,29 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+  <f:entry title="${%Board ID}" field="boardid" >
+    <f:textbox  />
+  </f:entry>
+
+  <f:entry title="${%Task ID}" field="taskid" >
+    <f:textbox  />
+  </f:entry>
+
+  <f:entry title="${%Column}" field="column" >
+    <f:textbox  />
+  </f:entry>
+
+  <f:entry title="${%Lane}" field="lane" >
+    <f:textbox  />
+  </f:entry>
+
+  <f:advanced>
+    <f:entry title="${%Position}" field="position" >
+      <f:textbox  />
+    </f:entry>
+
+    <f:entry title="${%Exceeding reason}" field="exceedingreason" help="/plugin/kanbanize-plugin/help-exceedingreason.html">
+      <f:textbox  />
+    </f:entry>
+  </f:advanced>
+
+</j:jelly>

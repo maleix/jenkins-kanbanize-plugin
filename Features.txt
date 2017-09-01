@@ -12,3 +12,4 @@ Reminder list to implement
 [ ] - Global security / permissions revision
 [X] - Button for check connection in Global Config
 [ ] - Automated Tests
+[ ] - Returned details as environment variables

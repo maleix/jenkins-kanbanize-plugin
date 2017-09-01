@@ -1,5 +1,5 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
-  <f:entry title="${%Board ID}" field="boardid" help="/plugin/kanbanize-plugin/help-boardid.html">
+  <f:entry title="${%Board ID}" field="boardid" >
     <f:textbox  />
   </f:entry>
 
@@ -56,15 +56,15 @@
       <f:textbox  />
     </f:entry>
 
-    <f:entry title="${%Column}" field="column" help="/plugin/kanbanize-plugin/help-column.html">
+    <f:entry title="${%Column}" field="column" >
       <f:textbox  />
     </f:entry>
 
-    <f:entry title="${%Lane}" field="lane" help="/plugin/kanbanize-plugin/help-lane.html">
+    <f:entry title="${%Lane}" field="lane" >
       <f:textbox  />
     </f:entry>
 
-    <f:entry title="${%Position}" field="position" help="/plugin/kanbanize-plugin/help-position.html">
+    <f:entry title="${%Position}" field="position" >
       <f:textbox  />
     </f:entry>
 
