@@ -1,0 +1,14 @@
+Reminder list to implement
+
+[X] - Implement core functionality
+[X] - Logs -> Logging class
+[ ] - Implement all Kanbanize API actions
+[X] - Make builds fail
+[X] - Implement checkValidations for every action
+[X] - Implement KanbanizeBuildStep for Pipeline
+[ ] - Code documentation
+[X] - Config.jellys and help documentation 
+[ ] - Assign boardids to a name in the General Config
+[ ] - Global security / permissions revision
+[X] - Button for check connection in Global Config
+[ ] - Automated Tests

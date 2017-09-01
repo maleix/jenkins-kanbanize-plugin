@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+  This plugin makes actions with your boards from Kanbanize.com
+</div>

@@ -1,0 +1,96 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+  <f:entry title="${%Board ID}" field="boardid" help="/plugin/kanbanize-plugin/help-boardid.html">
+    <f:textbox  />
+  </f:entry>
+
+  <f:entry title="${%Title}" field="title" >
+    <f:textbox  />
+  </f:entry>
+
+  <f:entry title="${%Description}" field="description" >
+    <f:textarea />
+  </f:entry>
+
+  <f:entry name="priority" title="Priority" field="priority" >
+    <select name="priority" >
+      <option value="low">Low</option>
+      <option value="average" selected="true">Average</option>
+      <option value="high">High</option>
+    </select>
+  </f:entry>
+
+  <f:entry title="${%Assignee}" field="assignee" help="/plugin/kanbanize-plugin/help-assignee.html">
+    <f:textbox  />
+  </f:entry>
+
+  <f:entry title="${%Size}" field="size" >
+    <f:textbox  />
+  </f:entry>
+
+  <f:entry title="${%Tags}" field="tags" description="Space separated list of tags" >
+    <f:textbox  />
+  </f:entry>
+
+  <f:entry title="${%Deadline}" field="deadline" description="Format: yyyy-mm-dd" help="/plugin/kanbanize-plugin/help-deadline.html">
+    <f:textbox  />
+  </f:entry>
+
+  <f:advanced>
+    <f:entry title="${%Color}" field="color" description="Hex color code" help="/plugin/kanbanize-plugin/help-color.html">
+      <f:textbox  />
+    </f:entry> 
+
+    <f:entry title="${%Extlink}" field="extlink" help="/plugin/kanbanize-plugin/help-extlink.html">
+      <f:textbox  />
+    </f:entry>
+
+    <f:entry title="${%Type}" field="type" >
+      <f:textbox  />
+    </f:entry>
+
+    <f:entry title="${%Template}" field="template" >
+      <f:textbox  />
+    </f:entry>
+
+    <f:entry title="${%Customfield}" field="customfield" >
+      <f:textbox  />
+    </f:entry>
+
+    <f:entry title="${%Column}" field="column" help="/plugin/kanbanize-plugin/help-column.html">
+      <f:textbox  />
+    </f:entry>
+
+    <f:entry title="${%Lane}" field="lane" help="/plugin/kanbanize-plugin/help-lane.html">
+      <f:textbox  />
+    </f:entry>
+
+    <f:entry title="${%Position}" field="position" help="/plugin/kanbanize-plugin/help-position.html">
+      <f:textbox  />
+    </f:entry>
+
+    <f:entry title="${%Exceeding reason}" field="exceedingreason" help="/plugin/kanbanize-plugin/help-exceedingreason.html">
+      <f:textbox  />
+    </f:entry>
+  </f:advanced>
+
+
+
+  <f:entry title="${Subtasks}" help="${descriptor.getHelpFile('subtask')}">
+    <f:repeatable field="subtasks" add="${%Add subtask}" >
+      <table width="100%">
+        <f:entry title="${%Title}" field="title" >
+            <f:textbox/>
+        </f:entry>
+
+        <f:entry title="${%Assignee}" field="assignee" >
+            <f:textbox/>
+        </f:entry>
+      </table>
+      <div align="right">
+        <f:repeatableDeleteButton value="${%Delete}" />
+      </div>
+    </f:repeatable>
+  </f:entry>
+
+  
+</j:jelly>
